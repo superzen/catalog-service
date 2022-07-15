@@ -23,7 +23,7 @@ public class BookService {
         if (bookRepository.existsByIsbn(book.isbn())) {
             throw new BookAlreadyExistException(book.isbn());
         }
-        return bookRepository.saveBook(book);
+        return bookRepository.save(book);
     }
 
     public void removeBookFromCatalog(String isbn) {
@@ -42,7 +42,7 @@ public class BookService {
                             existingBook.createdDate(),
                             existingBook.lastModifiedDate(),
                             existingBook.version());
-                    return bookRepository.saveBook(bookToUpdate);
+                    return bookRepository.save(bookToUpdate);
                 })
                 .orElseGet(() -> addBookToCatalog(book));
     }
