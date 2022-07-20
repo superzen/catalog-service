@@ -58,6 +58,3 @@ docker network rm catalog-network
 ```
 gradlew bootBuildImage --imageName ghcr.io/superzen/catalog-service --publishImage -PregistryUrl=ghcr.io -PregistryUsername=superzen -PregistryToken=<your_github_token>
 ```
-
-gradlew bootBuildImage --imageName ghcr.io/superzen/catalog-service --publishImage -PregistryUrl=ghcr.io
--PregistryUsername=superzen -PregistryToken=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
